@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan(basePackages = "cn.wpin.mall.content")
+@MapperScan(basePackages = "cn.wpin.mall")
 public class ContentApplication {
 
     public static void main(String[] args) {
