@@ -41,4 +41,13 @@ public class SubjectController {
         List<Subject> subjectList = subjectService.list(keyword, pageNum, pageSize);
         return CommonPage.restPage(subjectList);
     }
+
+    @ApiOperation(value = "根据专题名称分页获取专题")
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public CommonPage<Subject> getList(@RequestParam(value = "cateId", required = false) Long cateId,
+                                       @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                       @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
+        List<Subject> subjectList = subjectService.list(cateId, pageNum, pageSize);
+        return CommonPage.restPage(subjectList);
+    }
 }

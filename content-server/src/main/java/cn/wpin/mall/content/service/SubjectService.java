@@ -34,4 +34,15 @@ public class SubjectService {
         }
         return subjectMapper.selectByExample(example);
     }
+
+    public List<Subject> list(Long cateId, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        SubjectExample example = new SubjectExample();
+        SubjectExample.Criteria criteria = example.createCriteria();
+        criteria.andShowStatusEqualTo(1);
+        if(cateId!=null){
+            criteria.andCategoryIdEqualTo(cateId);
+        }
+        return subjectMapper.selectByExample(example);
+    }
 }
