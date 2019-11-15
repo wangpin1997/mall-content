@@ -24,15 +24,15 @@ public interface SubjectClient {
     /**
      * 根据专题名称分页获取专题
      */
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list/keyword", method = RequestMethod.GET)
     CommonPage<Subject> getList(@RequestParam(value = "keyword", required = false) String keyword,
                                 @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                 @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize);
 
     /**
-     * 根据专题名称分页获取专题
+     * 根据专题种类id分页获取专题
      */
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list/cateId", method = RequestMethod.GET)
     CommonPage<Subject> getList(@RequestParam(value = "cateId", required = false) Long cateId,
                                 @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                 @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize);
